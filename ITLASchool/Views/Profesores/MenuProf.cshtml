@@ -1,0 +1,97 @@
+﻿@model IEnumerable<ITLASchool.Models.Profesores>
+
+@{
+    ViewData["Title"] = "Profesores";
+}
+
+<form method="get" action=@Url.Action("MenuProf", "Profesores" )>
+    <div class="form-group">
+
+        @Html.TextBox("nombre", null, new
+        {
+            placeholder = "Buscar Por Nombre",
+
+        })
+        <button class="btn btn-info" type="submit">Buscar</button>
+    </div>
+
+</form>
+<br />
+<span class="table-add float-right mb-3 mr-2">
+    <a asp-action="CrearProf" class="text-success">
+        Crear Profesor
+        <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+    </a>
+</span>
+<br />
+<br />
+<br />
+
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Profesores
+
+    </h3>
+
+</div>
+
+
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="table" class="table-editable">
+
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">@Html.DisplayNameFor(model => model.Nombre)</th>
+                        <th class="text-center">@Html.DisplayNameFor(model => model.Apellido)</th>
+                        <th class="text-center">Detalles</th>
+                        <th class="text-center">Opciones</th>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apellido)
+                            </td>
+                            <td>
+                                <!--Primer boton -->
+                                <span class="table-up">
+                                    <a asp-action="DetalleProf" asp-route-id="@item.ProfesoresID" class="indigo-text">
+                                        <span style="font-size:25px; color: green; ">
+                                            <i class="fas fa-info-circle"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </td>
+                            <td>
+                                <!--Segundo boton -->
+                                <span style="font-size: 25px; color: Dodgerblue; margin:2px;">
+                                    <a asp-action="EditarProf" asp-route-id="@item.ProfesoresID" class="fas fa-user-edit"></a>
+                                </span>
+
+                                <!--Tercer boton -->
+                                <span style="font-size: 25px; color:red;">
+                                    <a asp-action="BorrarProf" asp-route-id="@item.ProfesoresID">
+                                        <span style="font-size: 25px; color: red; margin:2px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Editable table -->

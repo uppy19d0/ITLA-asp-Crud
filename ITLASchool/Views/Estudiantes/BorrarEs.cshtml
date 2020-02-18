@@ -1,0 +1,38 @@
+﻿@model ITLASchool.Models.Estudiantes
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+    <br />  
+<h3>¿Esta seguro de eliminar este estudiante?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+    </dl>
+    
+    <form asp-action="BorrarEs">
+        <input type="hidden" asp-for="EstudiantesID" />
+        <a type="button" class="btn btn-success" asp-action="MenuEs">Cancelar</a> |
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+
+    </form>
+</div>

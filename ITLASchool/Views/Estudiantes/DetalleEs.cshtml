@@ -1,0 +1,42 @@
+﻿@model ITLASchool.Models.Estudiantes
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+    <br />
+<div>
+    <dl class="list-group">
+
+        <span style="font-size:20px; text-align:center; ">
+            <dt class="list-group-item active">
+                Detalles del estudiante
+            </dt>
+        </span>
+        <dt class = "list-group-item ">
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+        <dd class = "list-group-item">
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+        <dt class = "list-group-item">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "list-group-item">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "list-group-item">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class = "list-group-item">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+    </dl>
+</div>
+
+<br />  
+<div>
+    <a type="button" class="btn btn-success" asp-action="MenuEs">Volver atras </a> |
+    <a type="button" class="btn btn-danger" asp-action="EditarEs" asp-route-id="@Model.EstudiantesID">Editar</a>
+
+</div>

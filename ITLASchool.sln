@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITLASchool", "ITLASchool\ITLASchool.csproj", "{897DC6C6-08BE-49D4-97DA-92F2ED7C84FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{897DC6C6-08BE-49D4-97DA-92F2ED7C84FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897DC6C6-08BE-49D4-97DA-92F2ED7C84FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897DC6C6-08BE-49D4-97DA-92F2ED7C84FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897DC6C6-08BE-49D4-97DA-92F2ED7C84FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74BEC879-8A43-4C8F-AB57-C4EF6D6D081D}
+	EndGlobalSection
+EndGlobal

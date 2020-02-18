@@ -1,0 +1,37 @@
+﻿@model ITLASchool.Models.Profesores
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<br />
+<div>
+    <dl class="list-group">
+
+        <span style="font-size:20px; text-align:center; ">
+            <dt class="list-group-item active">
+                Detalles del profesor
+            </dt>
+        </span>
+        <dt class="list-group-item ">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="list-group-item">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="list-group-item">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class="list-group-item">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+    </dl>
+</div>
+
+<br />
+<div>
+    <a type="button" class="btn btn-success" asp-action="MenuProf">Volver atras </a> |
+    <a type="button" class="btn btn-danger" asp-action="EditarProf" asp-route-id="@Model.ProfesoresID">Editar</a>
+
+</div>

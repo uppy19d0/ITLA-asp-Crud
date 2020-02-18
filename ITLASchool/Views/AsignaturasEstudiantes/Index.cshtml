@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ITLASchool.Models.AsignaturasEstudiantes>
+
+@{
+    ViewData["Title"] = "Asignar";
+}
+
+<br />
+<span class="table-add float-right mb-3 mr-2">
+    <a asp-action="Create" class="text-success">
+        Asignar Asignatura A Estudiante
+        <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+    </a>
+</span>
+<br />
+<br />
+<br />
+
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Asignaturas de estudiantes
+
+    </h3>
+
+</div>
+
+
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="table" class="table-editable">
+
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">@Html.DisplayNameFor(model => model.Asignaturas)</th>
+                        <th class="text-center">@Html.DisplayNameFor(model => model.Estudiantes)</th>
+                        <th class="text-center">Detalles</th>
+                        <th class="text-center">Opciones</th>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Asignaturas.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estudiantes.Apellido)
+                            </td>
+                            <td>
+                                <!--Primer boton -->
+                                <span class="table-up">
+                                    <a asp-action="Details" asp-route-id="@item.AsignaturasEstudiantesID" class="indigo-text">
+                                        <span style="font-size:25px; color: green; ">
+                                            <i class="fas fa-info-circle"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </td>
+                            <td>
+                                <!--Segundo boton -->
+                                <span style="font-size: 25px; color: Dodgerblue; margin:2px;">
+                                    <a asp-action="Edit" asp-route-id="@item.AsignaturasEstudiantesID" class="fas fa-user-edit"></a>
+                                </span>
+
+                                <!--Tercer boton -->
+                                <span style="font-size: 25px; color:red;">
+                                    <a asp-action="Delete" asp-route-id="@item.AsignaturasEstudiantesID">
+                                        <span style="font-size: 25px; color: red; margin:2px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Editable table -->

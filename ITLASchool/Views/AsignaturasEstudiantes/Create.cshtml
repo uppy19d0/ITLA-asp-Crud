@@ -1,0 +1,39 @@
+﻿@model ITLASchool.Models.AsignaturasEstudiantes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<script src="https://kit.fontawesome.com/3c52229e0a.js" crossorigin="anonymous"></script>
+
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Seleccione la asignatura y el estudiante
+    </h3>
+
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EstudiantesID" class="list-group-item font-weight-bold"></label>
+                <select asp-for="EstudiantesID" class="form-control" asp-items="ViewBag.EstudiantesID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsignaturasID" class="list-group-item font-weight-bold"></label>
+                <select asp-for="AsignaturasID" class="form-control" asp-items="ViewBag.AsignaturasID"></select>
+            </div>
+            <div class="form-group">
+                <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
