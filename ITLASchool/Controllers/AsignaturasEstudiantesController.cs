@@ -19,7 +19,7 @@ namespace ITLASchool.Controllers
         }
 
         // GET: AsignaturasEstudiantes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> MenuAsignStudents()
         {
             var myDbContext = _context.AsignaturasEstudiantes.Include(a => a.Asignaturas).Include(a => a.Estudiantes);
             return View(await myDbContext.ToListAsync());
@@ -46,33 +46,31 @@ namespace ITLASchool.Controllers
         }
 
         // GET: AsignaturasEstudiantes/Create
-        public IActionResult Create()
+        public IActionResult CrearAsignStudents()
         {
             ViewData["AsignaturasID"] = new SelectList(_context.Asignaturas, "AsignaturasID", "Nombre");
-            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Apellido");
+            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Matricula");
             return View();
         }
 
         // POST: AsignaturasEstudiantes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AsignaturasEstudiantesID,EstudiantesID,AsignaturasID")] AsignaturasEstudiantes asignaturasEstudiantes)
+        public async Task<IActionResult> CrearAsignStudents([Bind("AsignaturasEstudiantesID,EstudiantesID,AsignaturasID")] AsignaturasEstudiantes asignaturasEstudiantes)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(asignaturasEstudiantes);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(MenuAsignStudents));
             }
             ViewData["AsignaturasID"] = new SelectList(_context.Asignaturas, "AsignaturasID", "Nombre", asignaturasEstudiantes.AsignaturasID);
-            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Apellido", asignaturasEstudiantes.EstudiantesID);
+            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Matricula", asignaturasEstudiantes.EstudiantesID);
             return View(asignaturasEstudiantes);
         }
 
-        // GET: AsignaturasEstudiantes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: AsignaturasEstudiantes/Editar/id
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
@@ -85,16 +83,14 @@ namespace ITLASchool.Controllers
                 return NotFound();
             }
             ViewData["AsignaturasID"] = new SelectList(_context.Asignaturas, "AsignaturasID", "Nombre", asignaturasEstudiantes.AsignaturasID);
-            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Apellido", asignaturasEstudiantes.EstudiantesID);
+            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Matricula", asignaturasEstudiantes.EstudiantesID);
             return View(asignaturasEstudiantes);
         }
 
-        // POST: AsignaturasEstudiantes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: AsignaturasEstudiantes/Editar/id
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AsignaturasEstudiantesID,EstudiantesID,AsignaturasID")] AsignaturasEstudiantes asignaturasEstudiantes)
+        public async Task<IActionResult> Editar(int id, [Bind("AsignaturasEstudiantesID,EstudiantesID,AsignaturasID")] AsignaturasEstudiantes asignaturasEstudiantes)
         {
             if (id != asignaturasEstudiantes.AsignaturasEstudiantesID)
             {
@@ -119,14 +115,14 @@ namespace ITLASchool.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(MenuAsignStudents));
             }
             ViewData["AsignaturasID"] = new SelectList(_context.Asignaturas, "AsignaturasID", "Nombre", asignaturasEstudiantes.AsignaturasID);
-            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Apellido", asignaturasEstudiantes.EstudiantesID);
+            ViewData["EstudiantesID"] = new SelectList(_context.Estudiantes, "EstudiantesID", "Matricula", asignaturasEstudiantes.EstudiantesID);
             return View(asignaturasEstudiantes);
         }
 
-        // GET: AsignaturasEstudiantes/Delete/5
+        // GET: AsignaturasEstudiantes/Delete/id
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +142,7 @@ namespace ITLASchool.Controllers
             return View(asignaturasEstudiantes);
         }
 
-        // POST: AsignaturasEstudiantes/Delete/5
+        // POST: AsignaturasEstudiantes/Delete/id
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -154,7 +150,7 @@ namespace ITLASchool.Controllers
             var asignaturasEstudiantes = await _context.AsignaturasEstudiantes.FindAsync(id);
             _context.AsignaturasEstudiantes.Remove(asignaturasEstudiantes);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(MenuAsignStudents));
         }
 
         private bool AsignaturasEstudiantesExists(int id)

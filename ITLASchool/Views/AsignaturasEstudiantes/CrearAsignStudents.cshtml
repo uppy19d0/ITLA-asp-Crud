@@ -16,7 +16,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="CrearAsignStudents">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="EstudiantesID" class="list-group-item font-weight-bold"></label>
@@ -27,7 +27,7 @@
                 <select asp-for="AsignaturasID" class="form-control" asp-items="ViewBag.AsignaturasID"></select>
             </div>
             <div class="form-group">
-                <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+                <a type="button" class="btn btn-success" asp-action="MenuAsignStudents">Volver atras </a> |
                 <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>

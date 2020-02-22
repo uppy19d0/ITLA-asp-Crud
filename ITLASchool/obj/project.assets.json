@@ -8614,11 +8614,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luis_\\OneDrive\\Escritorio\\ITLASchool\\ITLASchool\\ITLASchool.csproj",
+      "projectUniqueName": "C:\\Users\\luis_\\TareaProgramacion2\\Asp\\ITLASchool\\ITLASchool.csproj",
       "projectName": "ITLASchool",
-      "projectPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\ITLASchool\\ITLASchool\\ITLASchool.csproj",
+      "projectPath": "C:\\Users\\luis_\\TareaProgramacion2\\Asp\\ITLASchool\\ITLASchool.csproj",
       "packagesPath": "C:\\Users\\luis_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luis_\\OneDrive\\Escritorio\\ITLASchool\\ITLASchool\\obj\\",
+      "outputPath": "C:\\Users\\luis_\\TareaProgramacion2\\Asp\\ITLASchool\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\luis_\\AppData\\Roaming\\NuGet\\NuGet.Config",

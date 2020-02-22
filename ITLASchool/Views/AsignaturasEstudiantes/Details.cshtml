@@ -24,14 +24,14 @@
             @Html.DisplayNameFor(model => model.Estudiantes)
         </dt>
         <dd class="list-group-item">
-            @Html.DisplayFor(model => model.Estudiantes.Apellido)
+            @Html.DisplayFor(model => model.Estudiantes.Matricula)
         </dd>
     </dl>
 </div>
 
 <br />
 <div>
-    <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
-    <a type="button" class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.AsignaturasEstudiantesID">Editar</a>
+    <a type="button" class="btn btn-success" asp-action="MenuAsignStudents">Volver atras </a> |
+    <a type="button" class="btn btn-danger" asp-action="Editar" asp-route-id="@Model.AsignaturasEstudiantesID">Editar</a>
 
 </div>

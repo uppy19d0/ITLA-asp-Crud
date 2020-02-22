@@ -1,7 +1,7 @@
 ﻿@model ITLASchool.Models.AsignaturasEstudiantes
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <span style="font-size:20px; text-align:center; ">
@@ -13,7 +13,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Editar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AsignaturasEstudiantesID" />
             <div class="form-group">
@@ -27,7 +27,7 @@
                 <span asp-validation-for="AsignaturasID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <a type="button" class="btn btn-success" asp-action="Index">Cancelar</a> |
+                <a type="button" class="btn btn-success" asp-action="MenuAsignStudents">Cancelar</a> |
                 <input type="submit" value="Guardar" class="btn btn-danger" />
             </div>
         </form>

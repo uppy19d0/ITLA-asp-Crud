@@ -6,7 +6,7 @@
 
 <br />
 <span class="table-add float-right mb-3 mr-2">
-    <a asp-action="Create" class="text-success">
+    <a asp-action="CrearAsignTeachers" class="text-success">
         Asignar Asignatura A Estudiante
         <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
     </a>
@@ -45,7 +45,7 @@
                                 @Html.DisplayFor(modelItem => item.Asignaturas.Nombre)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Profesores.Apellido)
+                                @Html.DisplayFor(modelItem => item.Profesores.Nombre)
                             </td>
                             <td>
                                 <!--Primer boton -->
@@ -61,7 +61,7 @@
                             <td>
                                 <!--Segundo boton -->
                                 <span style="font-size: 25px; color: Dodgerblue; margin:2px;">
-                                    <a asp-action="Edit" asp-route-id="@item.AsignaturasMaestrosID" class="fas fa-user-edit"></a>
+                                    <a asp-action="Editar" asp-route-id="@item.AsignaturasMaestrosID" class="fas fa-user-edit"></a>
                                 </span>
 
                                 <!--Tercer boton -->

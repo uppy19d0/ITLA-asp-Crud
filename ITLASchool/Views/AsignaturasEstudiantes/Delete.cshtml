@@ -20,13 +20,13 @@
             @Html.DisplayNameFor(model => model.Estudiantes)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Estudiantes.Apellido)
+            @Html.DisplayFor(model => model.Estudiantes.Matricula)
         </dd>
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="AsignaturasEstudiantesID" />
-        <a type="button" class="btn btn-success" asp-action="Index">Cancelar</a> |
+        <a type="button" class="btn btn-success" asp-action="MenuAsignStudents">Cancelar</a> |
         <input type="submit" value="Eliminar" class="btn btn-danger" />
 
     </form>

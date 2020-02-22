@@ -1,36 +1,37 @@
 ﻿@model ITLASchool.Models.AsignaturasMaestros
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<span style="font-size:20px; text-align:center; ">
-    <dt class="list-group-item active">
-        Editar asignatura-profesor
-    </dt>
-</span>
 
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Seleccione la asignatura y el profesor
+    </h3>
+
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="CrearAsignTeachers">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AsignaturasMaestrosID" />
             <div class="form-group">
                 <label asp-for="AsignaturasID" class="list-group-item font-weight-bold"></label>
                 <select asp-for="AsignaturasID" class="form-control" asp-items="ViewBag.AsignaturasID"></select>
-                <span asp-validation-for="AsignaturasID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProfesoresID" class="list-group-item font-weight-bold"></label>
                 <select asp-for="ProfesoresID" class="form-control" asp-items="ViewBag.ProfesoresID"></select>
-                <span asp-validation-for="AsignaturasID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <a type="button" class="btn btn-success" asp-action="Index">Cancelar</a> |
-                <input type="submit" value="Guardar" class="btn btn-danger" />
+                <a type="button" class="btn btn-success" asp-action="MenuAsignTeachers">Volver atras </a> |
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
+
+
+
 
